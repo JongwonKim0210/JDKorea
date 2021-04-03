@@ -1,0 +1,89 @@
+/* common */
+body {margin: 0;padding: 0;}
+ul {list-style: none;padding-left: 0px;margin: 0;}
+
+/* index header - menu button */
+#topMenu_button {margin: 0;padding: 0;height: 33px;width: 100%;background-color: #efefef}
+#topMenu_button_layer {margin: auto;width: 1100px;height: 100%;}
+ul#topMenu_button_all {float: right;}
+ul#topMenu_button_all li {float: left;margin: 0;padding: 0;cursor: pointer;}
+
+/* index header - logo, content button */
+#logo_Menu {
+    margin: auto;
+    width: 1100px;
+    height: 200px;
+}
+
+div#logo_Menu div {
+    float: left;
+}
+
+ul#level_1 li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+/* index presentation area */
+#presentation_area {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 370px;  /* 임시값 - 사진 추가 후 삭제필요*/
+}
+
+/* index banner */
+#index_banner {margin: 0;padding-top: 40px;padding-bottom:40px;height: 285px;width: 100%;background-color: #f6f6f6;}
+#index_banner_area {
+    margin: auto;
+    width: 1100px;
+    height: 100px;
+}
+div#index_banner_area div {
+    cursor: pointer;
+    float: left;
+    margin: 0;
+    padding: 0;
+    opacity: 1; /* 마우스 오버 시 0.8, 이후 1로 원복*/
+}
+
+/* category shortcut area */
+#category_area {
+    margin: 0;padding: 0;height: 190px;width: 100%;
+}
+
+#category_shortCut {
+    margin: auto;
+    width: 1100px;
+}
+
+#category_shortCut_notice {
+    width: 345px;
+    padding-top: 30px;
+    padding-right: 40px;
+    border-right: 1px solid #eeeeee;
+
+}
+
+#category_shortCut_gallery {
+    width: 491px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-right: 1px solid #eeeeee;
+
+}
+
+#category_shortCut_customerInfo {
+    width: 264px;
+    padding-left: 40px;
+}
+
+/* footer area */
+#footer_area {padding-top: 30px;}
+#footer_main_body {margin: 0;padding: 0;height: 210px;width: 100%;background-color: #3e3e3e;}
+#footer_main_content {margin: auto;width: 1100px;}
+#footer_table {height: 25px;}
+div#footer_table div {float: left;margin-right: 18px;margin-left: 2px;}
+div#footer_table span {font-size: 12px;font-weight: bold;font-family: Dotum, Gulim, Arial;color: #a8a8a8;cursor: pointer;}
+div#company_info div {margin-top: 5px;margin-left: 1px;font-size: 12px;font-family: Dotum, Gulim, Arial;color: #a8a8a8;}
