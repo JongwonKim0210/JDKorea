@@ -4,7 +4,24 @@ function moveBlog() {
 }
 
 function moveCategory(index) {
+    switch (index) {
+        case 1 :    // index page
+            break;
+        case 2 :    // about
+            break;
+        case 3 :    // business
+            break;
+        case 4 :    // gallery
+            break;
+        case 5 :    // online
+            break;
+        case 6 :    // customer
+            break;
+    }
+}
 
+function bannerClick() {
+    footerMoveCategory(4);
 }
 
 function footerMoveCategory(index) {
