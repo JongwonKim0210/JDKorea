@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>수정해라잉?</title>
+        <script type="text/javascript" th:src="@{/js/jquery/jquery-3.6.0.js}"></script>
+        <script type="text/javascript" th:src="@{/js/login/Login.js}"></script>
+    </head>
+    <body>
+        id : <input type="text" id="id">
+        password : <input type="password" id="password">
+        <span onclick="checkUser()">확인</span>
+        <div id="result"></div>
+    </body>
+</html>

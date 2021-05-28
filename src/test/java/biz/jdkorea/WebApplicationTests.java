@@ -1,4 +1,4 @@
-package biz.jdkorea.web;
+package biz.jdkorea;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -3,6 +3,7 @@ body {margin: 0;padding: 0;}
 ul {list-style: none;padding-left: 0px;margin: 0;}
 li {list-style: none;}
 div#more_button {cursor: pointer;}
+address {font-style: normal;}
 
 /* index header - menu button */
 #topMenu_button {margin: 0;padding: 0;height: 33px;width: 100%;background-color: #efefef}
