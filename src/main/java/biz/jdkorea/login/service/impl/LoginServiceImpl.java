@@ -1,10 +1,12 @@
 package biz.jdkorea.login.service.impl;
 
-import biz.jdkorea.comm.CommonUtil;
+import biz.jdkorea.com.comm.CommonUtil;
 import biz.jdkorea.login.repository.User;
 import biz.jdkorea.login.repository.UserRepository;
 import biz.jdkorea.login.service.LoginService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -12,9 +14,10 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 public class LoginServiceImpl implements LoginService {
-
     private final CommonUtil commonUtil;
     private final UserRepository userRepository;
+
+    private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
     @Override
     public boolean loginCheck(Map<String, Object> request) throws Exception {
@@ -26,8 +29,9 @@ public class LoginServiceImpl implements LoginService {
 
         User user = userRepository.findUserById(id);
         if (user != null) {
-            String hashPassword = commonUtil.passwordToHashPassword(password);
-
+            String hashPassword = commonUtil.passwordToHashPassword512(password);
+            logger.info("hash Password : " + hashPassword);
+            logger.info("password : " + user.getPassword());
             if (hashPassword.equalsIgnoreCase(user.getPassword())) {
                 check = true;
             }
@@ -35,4 +39,5 @@ public class LoginServiceImpl implements LoginService {
 
         return check;
     }
+
 }
