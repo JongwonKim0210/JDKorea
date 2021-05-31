@@ -12,8 +12,10 @@ public class WebConfig implements WebMvcConfigurer {
 
     private AuthCheckInterceptor authCheckInterceptor;
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authCheckInterceptor).addPathPatterns("/*");    // 여기에 인터셉트 걸 url 패턴 입력
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(authCheckInterceptor)
+//                .excludePathPatterns("/login")  // 여기에 인터셉트 예외 할 url 패턴 입력
+//                .addPathPatterns("/*");    // 여기에 인터셉트 걸 url 패턴 입력
+//    }
 }

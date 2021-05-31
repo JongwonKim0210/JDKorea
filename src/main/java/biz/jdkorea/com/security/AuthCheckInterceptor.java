@@ -6,7 +6,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 
 @Component
 public class AuthCheckInterceptor implements HandlerInterceptor {
@@ -14,21 +13,18 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
-        if (cookies == null) {
-            moveLoginPage(response);
-            return false;
+        boolean checkCookie = false;
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equalsIgnoreCase("loginCookie")) {
+                checkCookie = true;
+                break;
+            }
         }
 
-        boolean checkCookie = Arrays.stream(cookies).allMatch(cookie -> cookie.getName().equalsIgnoreCase("loginCookie"));
         if (!checkCookie) {
-            moveLoginPage(response);
-            return false;
+            response.sendRedirect("/login");
         }
 
-        return true;
-    }
-
-    private void moveLoginPage(HttpServletResponse response) throws Exception {
-        response.sendRedirect("/login");
+        return checkCookie;
     }
 }
