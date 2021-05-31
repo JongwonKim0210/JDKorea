@@ -27,7 +27,6 @@ public class RestLoginController {
     public ResponseEntity<Boolean> loginCheck(@RequestBody Map<String, Object> request, HttpServletResponse response) throws Exception {
         boolean result = loginService.loginCheck(request);
         if (result) {
-            logger.info("cookie make start");
             String loginCookie = commonUtil.makeCookieValue(request);
             Cookie cookie = new Cookie("loginCookie", loginCookie);
             cookie.setSecure(true);
@@ -35,6 +34,7 @@ public class RestLoginController {
             cookie.setPath("/");
             response.addCookie(cookie);
         }
+
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

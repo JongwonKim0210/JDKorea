@@ -9,7 +9,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 
 public class Crypt {
-    private static final String KEY = "f0d63ab7916184819e558407aaf7af05b74e7e44103b7d5767929798f598098c99707c4cb940be7a72f3bd3f23de96543713a4946691e387bdf749f4c81f955a";
+    private static final String KEY = "f0d63ab7916184819e558407aaf7af05";
 
     public static String encode(String str) throws Exception {
         byte[] keyData = KEY.getBytes(StandardCharsets.UTF_8);

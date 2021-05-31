@@ -2,7 +2,6 @@ package biz.jdkorea.com.comm;
 
 import biz.jdkorea.com.crypt.Crypt;
 import com.google.gson.Gson;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

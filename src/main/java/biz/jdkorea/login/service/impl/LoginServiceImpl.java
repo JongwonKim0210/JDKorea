@@ -26,17 +26,14 @@ public class LoginServiceImpl implements LoginService {
         String id = request.get("id").toString();
         String password = request.get("password").toString();
         id = commonUtil.stripScriptTagsAndFunctions(id);
+        String hashPassword = commonUtil.passwordToHashPassword512(password);
 
         User user = userRepository.findUserById(id);
-        if (user != null) {
-            String hashPassword = commonUtil.passwordToHashPassword512(password);
-            logger.info("hash Password : " + hashPassword);
-            logger.info("password : " + user.getPassword());
-            if (hashPassword.equalsIgnoreCase(user.getPassword())) {
-                check = true;
-            }
+        if (user != null && hashPassword.equalsIgnoreCase(user.getPassword())) {
+            check = true;
         }
 
+        request.put("loginUser", check);
         return check;
     }
 
