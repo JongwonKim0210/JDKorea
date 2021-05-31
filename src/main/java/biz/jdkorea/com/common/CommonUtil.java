@@ -1,4 +1,4 @@
-package biz.jdkorea.com.comm;
+package biz.jdkorea.com.common;
 
 import biz.jdkorea.com.crypt.Crypt;
 import com.google.gson.Gson;

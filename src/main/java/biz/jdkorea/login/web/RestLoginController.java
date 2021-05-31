@@ -1,6 +1,6 @@
 package biz.jdkorea.login.web;
 
-import biz.jdkorea.com.comm.CommonUtil;
+import biz.jdkorea.com.common.CommonUtil;
 import biz.jdkorea.login.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

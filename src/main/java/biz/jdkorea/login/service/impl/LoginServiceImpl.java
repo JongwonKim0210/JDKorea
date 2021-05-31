@@ -1,6 +1,6 @@
 package biz.jdkorea.login.service.impl;
 
-import biz.jdkorea.com.comm.CommonUtil;
+import biz.jdkorea.com.common.CommonUtil;
 import biz.jdkorea.login.repository.User;
 import biz.jdkorea.login.repository.UserRepository;
 import biz.jdkorea.login.service.LoginService;
