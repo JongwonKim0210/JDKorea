@@ -1,4 +1,4 @@
-package biz.jdkorea.portal.repository;
+package biz.jdkorea.board.repository;
 
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;

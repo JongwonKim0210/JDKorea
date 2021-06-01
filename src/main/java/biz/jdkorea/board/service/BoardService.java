@@ -1,8 +1,8 @@
-package biz.jdkorea.portal.service;
+package biz.jdkorea.board.service;
 
 import java.util.Map;
 
-public interface PortalService {
+public interface BoardService {
 
     Map<String, Object> getBoardInfo(Map<String, Object> request) throws Exception;
 

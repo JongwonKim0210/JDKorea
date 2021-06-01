@@ -1,9 +1,9 @@
-package biz.jdkorea.portal.service.impl;
+package biz.jdkorea.board.service.impl;
 
 import biz.jdkorea.com.common.CommonUtil;
-import biz.jdkorea.portal.repository.Board;
-import biz.jdkorea.portal.repository.BoardRepository;
-import biz.jdkorea.portal.service.PortalService;
+import biz.jdkorea.board.repository.Board;
+import biz.jdkorea.board.repository.BoardRepository;
+import biz.jdkorea.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.*;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class PortalServiceImpl implements PortalService {
+public class BoardServiceImpl implements BoardService {
 
     private final CommonUtil commonUtil;
     private final BoardRepository boardRepository;

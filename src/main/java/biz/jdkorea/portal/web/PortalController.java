@@ -1,7 +1,6 @@
 package biz.jdkorea.portal.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -13,62 +12,44 @@ public class PortalController {
      */
     @GetMapping(value = {"/", "/home", "/main"})
     public String getIndexPage() {
-//        return "Index";
-        return "/login/Login";
+        return "Index";
     }
 
     /**
-     * Desc : 요청한 페이지 화면을 호출한다.
-     * @param model 요청한 페이지 타입을 넘겨준다
-     * @return 게시판 main 화면
+     * Desc : About Title 페이지를 호출한다.
+     * @return About Title 화면
      */
-    @GetMapping("/about")
-    public String getAboutPage(Model model) {
-        model.addAttribute("boardType", "about");
+    @GetMapping(value = {"/about", "/about/title"})
+    public String getAboutMainPage() {
         return null;
     }
 
     /**
-     * Desc : 요청한 페이지 화면을 호출한다.
-     * @param model 요청한 페이지 타입을 넘겨준다
-     * @return 게시판 main 화면
+     * Desc : About Come 페이지를 호출한다.
+     * @return About Come 화면
      */
-    @GetMapping("/business")
-    public String getBusinessPage(Model model) {
-        model.addAttribute("boardType", "business");
+    @GetMapping("/about/come")
+    public String getAboutComePage() {
         return null;
     }
 
-    /**
-     * Desc : 요청한 페이지 화면을 호출한다.
-     * @param model 요청한 페이지 타입을 넘겨준다
-     * @return 게시판 main 화면
-     */
-    @GetMapping("/gallery")
-    public String getGalleryPage(Model model) {
-        model.addAttribute("boardType", "gallery");
+    @GetMapping(value = {"/business"})
+    public String getBusinessMainPage() {
         return null;
     }
 
-    /**
-     * Desc : 요청한 페이지 화면을 호출한다.
-     * @param model 요청한 페이지 타입을 넘겨준다
-     * @return 게시판 main 화면
-     */
-    @GetMapping("/online")
-    public String getOnlinePage(Model model) {
-        model.addAttribute("boardType", "online");
+    @GetMapping(value = {"/gallery"})
+    public String getGalleryMainPage() {
         return null;
     }
 
-    /**
-     * Desc : 요청한 페이지 화면을 호출한다.
-     * @param model 요청한 페이지 타입을 넘겨준다
-     * @return 게시판 main 화면
-     */
-    @GetMapping("/customer")
-    public String getCustomerPage(Model model) {
-        model.addAttribute("boardType", "customer");
+    @GetMapping(value = {"/online"})
+    public String getOnlineMainPage() {
+        return null;
+    }
+
+    @GetMapping(value = {"/customer"})
+    public String getCustomerMainPage() {
         return null;
     }
 }
