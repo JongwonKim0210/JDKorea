@@ -1,0 +1,9 @@
+/* footer area */
+#footer_area {padding-top: 30px;}
+#footer_main_body {margin: 0;padding: 0;height: 210px;width: 100%;background-color: #3e3e3e;}
+#footer_main_content {margin: auto;width: 1100px;}
+#footer_table {height: 25px;}
+div#footer_table div {float: left;margin-right: 18px;margin-left: 2px;}
+div#footer_table span {font-size: 12px;font-weight: bold;font-family: Dotum, Gulim, Arial;color: #a8a8a8;cursor: pointer;}
+div#company_info div {margin-top: 5px;margin-left: 1px;font-size: 12px;font-family: Dotum, Gulim, Arial;color: #a8a8a8;}
+div#company_info div a {margin-top: 5px;margin-left: 1px;font-size: 12px;font-family: Dotum, Gulim, Arial;color: #a8a8a8; text-decoration: none;}
