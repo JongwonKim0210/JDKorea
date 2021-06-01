@@ -5,19 +5,20 @@ import biz.jdkorea.login.repository.User;
 import biz.jdkorea.login.repository.UserRepository;
 import biz.jdkorea.login.service.LoginService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class LoginServiceImpl implements LoginService {
     private final CommonUtil commonUtil;
     private final UserRepository userRepository;
-
-    private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
     @Override
     public boolean loginCheck(Map<String, Object> request) throws Exception {

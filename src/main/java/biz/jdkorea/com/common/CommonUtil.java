@@ -1,6 +1,6 @@
 package biz.jdkorea.com.common;
 
-import biz.jdkorea.com.crypt.Crypt;
+import biz.jdkorea.com.security.Crypt;
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

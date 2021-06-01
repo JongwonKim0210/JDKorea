@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
-
+    // TODO : 인터셉터 주석처리 해제
     private AuthCheckInterceptor authCheckInterceptor;
 
 //    @Override

@@ -1,4 +1,4 @@
-package biz.jdkorea.com.crypt;
+package biz.jdkorea.com.security;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
