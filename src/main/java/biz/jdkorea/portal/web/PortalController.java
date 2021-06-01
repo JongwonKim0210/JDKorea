@@ -21,7 +21,7 @@ public class PortalController {
      */
     @GetMapping(value = {"/about", "/about/title"})
     public String getAboutMainPage() {
-        return null;
+        return "/portal/Title";
     }
 
     /**
@@ -30,7 +30,7 @@ public class PortalController {
      */
     @GetMapping("/about/come")
     public String getAboutComePage() {
-        return null;
+        return "/portal/Come";
     }
 
     @GetMapping(value = {"/business"})
@@ -38,6 +38,10 @@ public class PortalController {
         return null;
     }
 
+    /**
+     * Desc : Gallery 페이지를 호출한다.
+     * @return Gallery 페이지
+     */
     @GetMapping(value = {"/gallery"})
     public String getGalleryMainPage() {
         return null;
