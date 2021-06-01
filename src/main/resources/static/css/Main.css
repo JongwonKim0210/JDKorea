@@ -33,11 +33,8 @@ ul#level_1 li {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 665px;  /* 임시값 - 사진 추가 후 삭제필요*/
+    height: 100%;
 }
-
-#slide_area {height: 100%;}
-div#slide_area div {margin: 0;padding: 0;height: 100%;}
 
 /* index banner */
 #index_banner {margin: 0;padding-top: 40px;padding-bottom:40px;height: 285px;width: 100%;background-color: #f6f6f6;}
