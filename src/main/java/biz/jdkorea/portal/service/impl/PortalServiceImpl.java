@@ -59,11 +59,65 @@ public class PortalServiceImpl implements PortalService {
         }
 
         String authorPassword = request.get("authorPassword").toString();
+        authorPassword = commonUtil.passwordToHashPassword256(authorPassword);
         String saveDate = commonUtil.getNowDate("yyyyMMDDHHmmss");
         Board board = Board.builder().boardType(boardType).title(title).content(content)
                            .authorName(authorName).authorPassword(authorPassword).saveDate(saveDate)
                            .build();
         Board newBoard = boardRepository.save(board);
         return newBoard.getSaveDate().equalsIgnoreCase(saveDate);
+    }
+
+    @Override
+    public boolean updateBoardInfo(Map<String, Object> request) throws Exception {
+        long boardId = 0;
+        String authorPassword = "";
+        String title = "";
+        String content = "";
+        if (request.get("boardId") != null && request.get("authorPassword") != null
+            && request.get("title") != null && request.get("content") != null) {
+            boardId = (long) request.get("boardId");
+            authorPassword = request.get("authorPassword").toString();
+            authorPassword = commonUtil.passwordToHashPassword256(authorPassword);
+            title = request.get("title").toString();
+            content = request.get("content").toString();
+        }
+
+        Board board = boardRepository.findBoardById(boardId);
+        if (board == null) {
+            return false;
+        }
+
+        if (!authorPassword.equalsIgnoreCase(board.getAuthorPassword())) {
+            return false;
+        }
+
+        board = Board.builder().id(boardId).title(title).content(content).build();
+        Board newBoard = boardRepository.save(board);
+        return newBoard.getId() == board.getId();
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public boolean deleteBoardInfo(Map<String, Object> request) {
+        List<Long> boardIds = new ArrayList<>();
+        if (request.get("boardIds") != null) {
+            boardIds = (List<Long>) request.get("boardIds");
+        }
+
+        if (boardIds.size() <= 0) {
+            return false;
+        } else if (boardIds.size() == 1) {
+            deleteBoard(boardIds.get(0));
+        } else {
+            for (long boardId : boardIds) {
+                deleteBoard(boardId);
+            }
+        }
+
+        return true;
+    }
+    private void deleteBoard(long boardId) {
+        boardRepository.deleteById(boardId);
     }
 }

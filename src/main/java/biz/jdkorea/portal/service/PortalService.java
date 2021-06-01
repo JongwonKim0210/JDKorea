@@ -4,8 +4,12 @@ import java.util.Map;
 
 public interface PortalService {
 
-    public Map<String, Object> getBoardInfo(Map<String, Object> request) throws Exception;
+    Map<String, Object> getBoardInfo(Map<String, Object> request) throws Exception;
 
-    public boolean setBoardInfo(Map<String, Object> request) throws Exception;
+    boolean setBoardInfo(Map<String, Object> request) throws Exception;
+
+    boolean updateBoardInfo(Map<String, Object> request) throws Exception;
+
+    boolean deleteBoardInfo(Map<String, Object> request) throws Exception;
 
 }
