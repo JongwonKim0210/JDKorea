@@ -5,10 +5,7 @@ import biz.jdkorea.login.repository.User;
 import biz.jdkorea.login.repository.UserRepository;
 import biz.jdkorea.login.service.LoginService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -22,20 +19,41 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public boolean loginCheck(Map<String, Object> request) throws Exception {
-        boolean check = false;
-
         String id = request.get("id").toString();
         String password = request.get("password").toString();
         id = commonUtil.stripScriptTagsAndFunctions(id);
         String hashPassword = commonUtil.passwordToHashPassword512(password);
-
         User user = userRepository.findUserById(id);
         if (user != null && hashPassword.equalsIgnoreCase(user.getPassword())) {
-            check = true;
+            request.put("loginUser", true);
+            return true;
         }
 
-        request.put("loginUser", check);
-        return check;
+        return false;
     }
 
+    @Override
+    public boolean setUser(Map<String, Object> request) throws Exception {
+        String id;
+        String password;
+        String name;
+        if (request.get("id") != null && request.get("name") != null && request.get("password") != null) {
+            id = request.get("id").toString();
+            password = request.get("password").toString();
+            password = commonUtil.passwordToHashPassword512(password);
+            name = request.get("name").toString();
+        } else {
+            log.error("some data(id, password, name) is null!");
+            return false;
+        }
+
+        String email = request.get("email").toString();
+        String phoneNumber = request.get("phoneNumber").toString();
+        String saveDate = commonUtil.getNowDate("yyyyMMDDHHmmss");
+        User user = User.builder().id(id).name(name).password(password)
+                        .phoneNumber(phoneNumber).email(email).saveDate(saveDate)
+                        .build();
+        User saveUser = userRepository.save(user);
+        return saveUser.getId().equalsIgnoreCase(user.getId());
+    }
 }

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -127,6 +129,15 @@ public class CommonUtil {
      */
     private String decodeLoginCookie(String loginCookie) throws Exception {
         return Crypt.decode(loginCookie);
+    }
+
+    /**
+     * Desc : 현재 시간을 문자열로 가져온다.
+     * @param format 가저올 시간 포맷
+     * @return 현재시간을 요청한 포맷형식의 문자열로 변환하여 반환
+     */
+    public String getNowDate(String format) {
+        return new SimpleDateFormat(format).format(new Date());
     }
 
 }

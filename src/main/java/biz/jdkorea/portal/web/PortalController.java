@@ -1,4 +1,4 @@
-package biz.jdkorea.portal;
+package biz.jdkorea.portal.web;
 
 import biz.jdkorea.com.common.CommonUtil;
 import lombok.RequiredArgsConstructor;

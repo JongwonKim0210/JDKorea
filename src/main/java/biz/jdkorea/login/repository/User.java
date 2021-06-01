@@ -12,8 +12,8 @@ import javax.persistence.Id;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @DynamicUpdate
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
 
     @Id
